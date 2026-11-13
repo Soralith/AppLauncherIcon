@@ -1,7 +1,7 @@
 {
     "id": "app-launcher-icon",
     "name": "App Launcher Icon",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "api": 1,
     "description": "A desktop icon that opens your chosen apps.",
     "icon": "rocket_launch",
@@ -14,6 +14,8 @@
         "iconSize": 96,
         "showBackground": true,
         "outlineWidth": 3,
+        "outlineColorMode": "theme",
+        "outlineCustomColor": "#ffffff",
         "imageFill": 60,
         "cornerRadius": 16,
         "roundOutline": true,
@@ -46,6 +48,24 @@
             "label": "Outline width",
             "description": "The border around the card. 0 removes it.",
             "min": 0, "max": 8, "step": 1, "unit": "px", "group": "Look"
+        },
+        "outlineColorMode": {
+            "label": "Outline color",
+            "description": "Theme follows the shell's own outline color.",
+            "choices": [
+                { "value": "theme", "label": "Theme" },
+                { "value": "white", "label": "White" },
+                { "value": "black", "label": "Black" },
+                { "value": "mint", "label": "Mint" },
+                { "value": "cyan", "label": "Cyan" },
+                { "value": "custom", "label": "Custom" }
+            ],
+            "group": "Look"
+        },
+        "outlineCustomColor": {
+            "label": "Custom color",
+            "description": "A hex code such as #ff7a8c. Used only when Outline color is Custom.",
+            "group": "Look"
         },
         "roundOutline": {
             "label": "Round the outline",

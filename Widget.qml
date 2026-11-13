@@ -10,6 +10,22 @@ Item {
     implicitWidth: size
     implicitHeight: size
 
+    // The outline color chosen in settings. Anything unusable falls back to the theme's.
+    readonly property color outlineCol: {
+        switch (host.settings.outlineColorMode) {
+        case "white": return "#ffffff"
+        case "black": return "#000000"
+        case "mint":  return host.theme.accentMint
+        case "cyan":  return host.theme.accentCyan
+        case "custom": {
+            let s = String(host.settings.outlineCustomColor).trim()
+            if (s.length > 0 && s[0] !== "#") s = "#" + s
+            return /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(s) ? s : host.theme.pLine
+        }
+        default: return host.theme.pLine
+        }
+    }
+
     function launchAll() {
         const lines = String(host.settings.apps).split("\n")
         for (let i = 0; i < lines.length; i++) {
@@ -42,7 +58,7 @@ Item {
         color: !host.settings.showBackground ? "transparent"
              : (area.containsMouse ? host.theme.pSurfaceHover : host.theme.pSurface)
         border.width: host.settings.outlineWidth
-        border.color: host.theme.pLine
+        border.color: root.outlineCol
         scale: area.pressed ? 0.94 : 1
         Behavior on scale { NumberAnimation { duration: 80 } }
 
