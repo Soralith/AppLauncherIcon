@@ -1,0 +1,72 @@
+{
+    "id": "app-launcher-icon",
+    "name": "App Launcher Icon",
+    "version": "1.0.0",
+    "api": 1,
+    "description": "A desktop icon that opens your chosen apps.",
+    "icon": "rocket_launch",
+    "frame": false,
+    "cloneable": true,
+    "settings": {
+        "apps": "firefox\nkitty",
+        "iconName": "rocket_launch",
+        "iconImage": "",
+        "iconSize": 96,
+        "showBackground": true,
+        "outlineWidth": 3,
+        "imageFill": 60,
+        "cornerRadius": 16,
+        "roundOutline": true,
+        "roundImage": false
+    },
+    "settingsInfo": {
+        "apps": {
+            "label": "Apps to open",
+            "description": "One command per line. All of them start when you click the icon.",
+            "multiline": true,
+            "group": "Apps"
+        },
+        "iconName": {
+            "label": "Icon name",
+            "description": "A Material Symbols name. Ignored if an image is set.",
+            "group": "Look"
+        },
+        "iconImage": {
+            "label": "Icon image",
+            "description": "Full path to an image. Drop an image on the icon to set it, or clear this to use the icon name.",
+            "group": "Look"
+        },
+        "iconSize": { "label": "Icon size", "min": 32, "max": 256, "step": 4, "unit": "px", "group": "Look" },
+        "showBackground": {
+            "label": "Show background",
+            "description": "The filled card behind the image. Turn off to show only the image.",
+            "group": "Look"
+        },
+        "outlineWidth": {
+            "label": "Outline width",
+            "description": "The border around the card. 0 removes it.",
+            "min": 0, "max": 8, "step": 1, "unit": "px", "group": "Look"
+        },
+        "roundOutline": {
+            "label": "Round the outline",
+            "description": "On: rounded corners. Off: square corners.",
+            "group": "Look"
+        },
+        "roundImage": {
+            "label": "Round the image",
+            "description": "On: the picture itself gets rounded corners. Off: it stays rectangular.",
+            "group": "Look"
+        },
+        "cornerRadius": {
+            "label": "Corner radius",
+            "description": "Used by the outline and the image when they are rounded.",
+            "min": 0, "max": 64, "step": 2, "unit": "px", "group": "Look"
+        },
+        "imageFill": {
+            "label": "Image fill",
+            "description": "How much of the icon the image covers. Use 100 with no background.",
+            "min": 30, "max": 100, "step": 5, "unit": "%", "group": "Look"
+        }
+    },
+    "groups": ["Apps", "Look"]
+}
